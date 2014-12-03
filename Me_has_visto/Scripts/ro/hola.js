@@ -1,0 +1,3 @@
+﻿function saludos (){
+    alert ("hola");
+}

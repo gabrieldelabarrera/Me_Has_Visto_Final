@@ -1,0 +1,20 @@
+﻿public ActionResult NotFound()
+{
+ViewBag["ErrorCode"]="NFE0001";
+ViewBag["Description"]="La mascota no se encuentra"+"en la base de datos";
+return View();
+}
+
+@{
+    
+    ViewBag.Title = "NotFound";
+}
+<h1> la informacion que buscaba no pudo ser encontrada </h1>
+<h2>Detalles</h2>
+<ul>
+    <li> <b> Codigo de erroer</b>@ViewBag["ErrorCode"]</li>
+    <li><b>Descripcion:</b>@ViewBag["Description"]</li>
+
+</ul>
+<h3>disculpa la mascota no esta registrada :'(</h3>
+<img src="~/Content/Uploads/flecha1.png" />

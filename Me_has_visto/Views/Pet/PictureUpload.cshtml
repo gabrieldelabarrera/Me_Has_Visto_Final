@@ -1,0 +1,35 @@
+﻿@model Me_has_visto.Models.PictureModel
+
+@{
+    ViewBag.Title = "PictureUpload";
+}
+
+<h2>Cargar Imagen</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new{ enctype = "multipart/form-data" }))
+
+{ 
+   @Html.AntiForgeryToken()
+   @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Seleccione la imagen de su mascota</legend>
+        <div class="editor-label">
+            @Html.LabelFor(Model=>Model.PictureFile)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(Model => Model.PictureFile, new { type="file"})
+            @Html.ValidationMessageFor(Model=>Model.PictureFile)
+        </div>
+        <p>
+            <input type="submit" value="Save"/>
+        </p>
+    </fieldset>
+    
+    
+
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval");
+}
